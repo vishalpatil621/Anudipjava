@@ -16,11 +16,11 @@ public class StudentHashset {
 		
 		//Using add() method
 		hset.add(s1);
-		hset.add(s3);
-		hset.add(s6);
-		hset.add(s5);
-		hset.add(s4);
 		hset.add(s2);
+		hset.add(s3);
+		hset.add(s4);
+		hset.add(s5);
+		hset.add(s6);
 		
 		//Using for loop
 		for (Student s : hset) 
