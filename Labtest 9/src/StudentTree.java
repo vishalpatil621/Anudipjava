@@ -18,10 +18,10 @@ public class StudentTree {
 		    System.out.println("Number of element in the set : "+tset.size());
 	        
 	        // Print the first element	        
-	        System.out.println("First Value in set :" + tset.pollfirst());
+	        System.out.println("First Value in set :" + tset.first());
 	 
 	        // Print the last element in	       
-	        System.out.println("Last Value in set :" + tset.polllast());
+	        System.out.println("Last Value in set :" + tset.last());
 	 
 	}
 
