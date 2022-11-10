@@ -35,8 +35,8 @@ public class EmployeeMain {
 	        List<Employee> emp2=(emp.stream().filter((p1)->p1.getSalary()> 10000).collect(Collectors.toList()));
 	        System.out.println("Count of Employees  : "+emp2.stream().count());
 	        
-	        //Employee Name and Department whose Salary is Maximum
-	        System.out.println("Employee Name and Department whose Salary is Maximum");
+	        //Employee Name whose Salary is Maximum
+	        System.out.println("Employee Name whose Salary is Maximum");
 	        System.out.println(emp.stream().max((p1,p2)->p1.getSalary()>p2.getSalary()?1:-1).map(e->e.getName()));
 	    
 
