@@ -1,0 +1,54 @@
+a.Write a SQL statement to add a foreign key constraint named fk_job_id on job_id column of 
+job_history table referencing to the primary key job_id of jobs table.
+
+mysql> create table job_history(employee_id int primary key auto_increment unique, start_date date, end_date date,job_id int,foreign key(job_id)references jobs(job_id),department_id int);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> desc job_history;
++---------------+------+------+-----+---------+----------------+
+| Field         | Type | Null | Key | Default | Extra          |
++---------------+------+------+-----+---------+----------------+
+| employee_id   | int  | NO   | PRI | NULL    | auto_increment |
+| start_date    | date | YES  |     | NULL    |                |
+| end_date      | date | YES  |     | NULL    |                |
+| job_id        | int  | YES  | MUL | NULL    |                |
+| department_id | int  | YES  |     | NULL    |                |
++---------------+------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+
+b.Write a SQL statement to rename the table countries to country_new.
+
+
+mysql> alter table countries rename to country_new;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc country_new;
++--------------+--------------------------------+------+-----+---------+----------------+
+| Field        | Type                           | Null | Key | Default | Extra          |
++--------------+--------------------------------+------+-----+---------+----------------+
+| country_id   | int                            | NO   | PRI | NULL    | auto_increment |
+| country_name | enum('Italy','India','Chaina') | YES  |     | NULL    |                |
+| region_id    | int                            | YES  |     | NULL    |                |
++--------------+--------------------------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+
+
+c.Write a SQL statement to change the name of the column country_id to con_id, 
+keeping the data type and size same.
+
+
+mysql> alter table country_new change country_id con_id int;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc country_new;
++--------------+--------------------------------+------+-----+---------+-------+
+| Field        | Type                           | Null | Key | Default | Extra |
++--------------+--------------------------------+------+-----+---------+-------+
+| con_id       | int                            | NO   | PRI | NULL    |       |
+| country_name | enum('Italy','India','Chaina') | YES  |     | NULL    |       |
+| region_id    | int                            | YES  |     | NULL    |       |
++--------------+--------------------------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)

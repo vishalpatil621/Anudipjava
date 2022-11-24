@@ -1,0 +1,67 @@
+a.Write a SQL statement to insert a record with your own value into the table countries against each columns.
+
+mysql> insert into country_new(con_id,country_name,region_id)values(1,'India',7);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from country_new;
++--------+--------------+-----------+
+| con_id | country_name | region_id |
++--------+--------------+-----------+
+|      1 | India        |         7 |
++--------+--------------+-----------+
+1 row in set (0.00 sec)
+
+
+b.Write a SQL statement to insert 5 rows by a single insert statement into jobs table.
+
+mysql> insert into jobs values(1,'vishal',20000,80000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into jobs (job_name,min_salary,max_salary) values('sagar',10000,40000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into jobs (job_name,min_salary,max_salary) values('karan',5000,50000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into jobs (job_name,min_salary,max_salary) values('sanchit',8000,60000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into jobs (job_name,min_salary,max_salary) values('sanchit',30000,100000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from jobs;
++--------+----------+------------+------------+
+| job_id | job_name | min_salary | max_salary |
++--------+----------+------------+------------+
+|      1 | vishal   |      20000 |      80000 |
+|      2 | sagar    |      10000 |      40000 |
+|      3 | karan    |       5000 |      50000 |
+|      4 | sanchit  |       8000 |      60000 |
+|      5 | sanchit  |      30000 |     100000 |
++--------+----------+------------+------------+
+5 rows in set (0.00 sec)
+
+
+
+c.Write a SQL statement to change Min_salary  to 8000 and max_Salary to 40000 for programmer.
+
+
+mysql> update jobs set min_salary=8000 where job_name='karan';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update jobs set max_salary=40000 where job_name='karan';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from jobs;
++--------+----------+------------+------------+
+| job_id | job_name | min_salary | max_salary |
++--------+----------+------------+------------+
+|      1 | vishal   |      20000 |      80000 |
+|      2 | sagar    |      10000 |      40000 |
+|      3 | karan    |       8000 |      40000 |
+|      4 | sanchit  |       8000 |      60000 |
+|      5 | sanchit  |      30000 |     100000 |
++--------+----------+------------+------------+
+5 rows in set (0.00 sec)
