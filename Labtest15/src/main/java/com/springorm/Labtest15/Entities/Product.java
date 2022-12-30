@@ -1,12 +1,14 @@
 package com.springorm.Labtest15.Entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Product {
 
 	@Id
+	@GeneratedValue
 	private int pid;
 	private String pname;
 	private int pprice;
